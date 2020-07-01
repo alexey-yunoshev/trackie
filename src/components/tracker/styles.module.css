@@ -1,0 +1,32 @@
+.tracker > * {
+  margin-bottom: 15px;
+}
+
+.tracker input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.trackerTask {
+  align-items: center;
+  display: flex;
+}
+
+.trackerTaskButton {
+  --width: 50px;
+  cursor: pointer;
+  min-width: var(--width);
+  max-width: var(--width);
+}
+
+.trackerTaskName {
+  flex-grow: 1;
+}
+
+.trackerTime {
+  --width: 115px;
+  display: flex;
+  justify-content: flex-end;
+  min-width: var(--width);
+  max-width: var(--width);
+}

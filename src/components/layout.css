@@ -1,3 +1,5 @@
+/* Default Gatsby styles */
+/* Go to line 625 */
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -619,4 +621,25 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+/* Project styles */
+
+html {
+  font-family: 'Work Sans', sans-serif;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  color: #464646;
+  cursor: pointer;
+  font-family: 'Work Sans', sans-serif;
+  margin-bottom: 30px;
+  padding: 4px 15px;
+  transition: 200ms background-color;
+}
+
+button:hover {
+    background-color: #e2e2e2;
 }

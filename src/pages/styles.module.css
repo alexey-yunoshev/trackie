@@ -1,0 +1,7 @@
+.buttonsRow > * {
+    margin-right: 12px;
+}
+
+.buttonsRow > *:last-child {
+    margin-right: 0;
+}
