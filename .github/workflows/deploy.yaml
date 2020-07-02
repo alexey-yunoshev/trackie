@@ -4,8 +4,6 @@ on:
   push:
     branches: [ t7 ]
 
-name: github pages
-
 jobs:
   deploy:
     runs-on: ubuntu-18.04
