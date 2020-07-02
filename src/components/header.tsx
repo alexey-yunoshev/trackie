@@ -10,7 +10,7 @@ const Header = () => (
     }}
   >
     <h1 style={{ margin: 0 }}>
-      Trackie t
+      Trackie
     </h1>
   </div>
 )
