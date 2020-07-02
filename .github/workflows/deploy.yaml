@@ -1,11 +1,53 @@
-name: GitHub Pages
+# name: GitHub Pages
+
+# on:
+#   push:
+#     branches: [ master ]
+
+# jobs:
+#   deploy:
+
+#     runs-on: ubuntu-latest
+
+#     strategy:
+#       matrix:
+#         os: [ubuntu-lastest]
+#         node-version: [14.x]
+
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: npm install
+#         run: |
+#           npm ci
+
+#       - name: Cache dependencies
+#         uses: actions/cache@v2
+#         with:
+#           path: ~/.npm
+#           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-node-
+
+#       - name: Format
+#         run: npm run format
+
+#       # - run: npm run test
+
+#       - name: Deploy
+#         run: |
+#           git config --global user.email "alexey.yunoshev@gmail.com"
+#           git config --global user.name "Alexey Yunoshev"
+#           npm run deploy
+
+name: Node.js CI
 
 on:
   push:
     branches: [ master ]
 
 jobs:
-  deploy:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -15,27 +57,10 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: npm install
-        run: |
-          npm ci
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Format
-        run: npm run format
-
-      # - run: npm run test
-
-      - name: Deploy
-        run: |
-          git config --global user.email "alexey.yunoshev@gmail.com"
-          git config --global user.name "Alexey Yunoshev"
-          npm run deploy
+    - uses: actions/checkout@v2
+    - name: npm install
+      run: |
+        npm ci
+    - name: Deploy
+      run: |
+        npm run deploy
