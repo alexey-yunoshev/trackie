@@ -1,0 +1,26 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ t7 ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        os: [ubuntu-lastest]
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: npm install
+      run: |
+        npm ci
+
+    - name: Deploy
+      run: |
+        npm ci
+        npm run build
